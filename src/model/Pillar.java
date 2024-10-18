@@ -21,8 +21,33 @@ public class Pillar {
      *         contrario
      */
     public boolean registerProject(Project newProject) {
-
+        for (int i = 0; i < projects.length; i++) {
+            if (projects[i] == null) {
+                projects[i] = newProject;
+                return true;
+            }
+        }
         return false;
+
+    }
+
+   
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Project[] getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Project[] projects) {
+        this.projects = projects;
     }
 
     /**
@@ -32,11 +57,13 @@ public class Pillar {
      * 
      */
     public String getProjectList() {
-
-        String list = "";
-
+        String list = getName();
+        for (int i = 0; i < projects.length; i++) {
+            if (projects[i] != null) {
+                list += "\n" + projects[i].toString();
+            }
+        }
         return list;
     }
-
 
 }

@@ -7,13 +7,25 @@ public class Project {
     private String description;
     private boolean status;
 
-    public Project (String id, String name, String description,boolean status){
+    public Project(String id, String name, String description, boolean status) {
 
         this.id = id;
-        this.name=name;
-        this.description=description;
-        this.status=status;
+        this.name = name;
+        this.description = description;
+        this.status = status;
 
     }
+
+    @Override
+    public String toString() {
+        return "Project [id=" + id + ", name=" + name + ", description=" + description + ", status=" + status + "]";
+    }
+
+
+    
+
+    
+
+
 
 }
